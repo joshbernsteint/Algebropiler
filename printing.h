@@ -63,4 +63,4 @@ const char* PERSON[] = {
 "&&&&&&&&&&&&&&&&&&&&$XXXxxxx+++++xxxxxxxxxx++++;.......X&&&&&&&",
 };
 
-#define PRINT_PERSON for(size_t i = 0; i < 42; i++) PRINTWHITEBG(PERSON[i])
+#define PRINT_PERSON for(int i = 0; i < 42; i++) PRINTWHITEBG(PERSON[i])
