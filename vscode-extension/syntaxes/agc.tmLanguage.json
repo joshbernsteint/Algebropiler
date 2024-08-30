@@ -1,0 +1,59 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "algecode",
+	"patterns": [
+		{
+			"name": "comment.line",
+			"match": "\\#(.*)"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#aggregates"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"name": "support.variable.agc",
+			"match": "(([a-zA-Z0-9]+)\\.([a-zA-Z0-9]+))|[a-zA-Z][a-zA-Z0-9_]+",
+			"captures": {
+				"2":{
+					"name": "meta.preprocessor"
+				}
+			}
+		},
+		{
+			"include": "#numbers"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.operators.agc",
+				"match": "(^|\\s|\\b)(==|!=|>=|<=|<|>|or|and)($|\\s|\\b)"
+			}]
+		},
+		"aggregates":{
+			"name": "entity.name.function.aggregates.agc",
+			"match": "\\b(avg|max|min|count|sum)\\b"
+		},
+		"strings": {
+			"name": "string.quoted.single.agc",
+			"begin": "'",
+			"end": "'",
+			"patterns": [
+				{
+					"name": "constant.numeric.escape.agc",
+					"match": "\\\\."
+				}
+			]
+		},
+		"numbers": {
+			"match": "([0-9]|[0-9]\\.[0-9])",
+			"name": "constant.numeric.agc"
+		}
+	},
+	"scopeName": "source.agc"
+}

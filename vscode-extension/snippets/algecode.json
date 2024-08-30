@@ -1,0 +1,18 @@
+{
+    "setup": {
+      "prefix": ["setup", "phi"],
+      "body": ["{$1}","$2","{$3}","{$4}","{$5}","$0"],
+      "description": "Setup the structure of the phi query"
+    },
+    "example1":{
+      "prefix": ["example1","query1","q1"],
+      "body": [
+        "{cust,prod,avg(quant), avg(x.quant) avg_x, sum(x.quant),count(x.quant), min(x.quant)}",
+        "1",
+        "{cust, prod}",
+        "{{avg(quant)}, {avg(x.quant),sum(x.quant),count(x.quant) ,min(x.quant)}}",
+        "{x.quant > 100}"
+      ],
+      "description": "Query example 1"
+    }
+  }

@@ -1,0 +1,35 @@
+{
+  "name": "relational-algebro-esql-compiler-syntax",
+  "displayName": "Relational Algebro ESQL Compiler Syntax",
+  "description": "Syntax highlighting for .agc",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.88.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "agc",
+      "aliases": ["algecode", "agc"],
+      "extensions": [".agc"],
+      "configuration": "./language-configuration.json",
+      "icon": {
+        "light": "./file_icon.png",
+        "dark": "./file_icon.png"
+      }
+    }],
+    "grammars": [{
+      "language": "agc",
+      "scopeName": "source.agc",
+      "path": "./syntaxes/agc.tmLanguage.json"
+    }],
+    "snippets": [
+      {
+        "language": "agc",
+        "path": "./snippets/algecode.json"
+      }
+    ]   
+  }
+}
